@@ -3,9 +3,13 @@ var bodyParser = require('body-parser'), port = 3000;//rmanejo de cuerpo de la "
 var http = require('http');//protocolo de intercambio de archivos
 var path = require('path');//direccion
 
+var operario = require('./src/rutas/operarioruta');
+// kevin
+// kevin
 
-var tipdoc = require('./src/rutas/tipdocruta');//ruta
-
+// davo
+// davo
+// davo
 
 var app = express();//recibe un constructor
 
@@ -40,7 +44,13 @@ app.use(function (req, res, next)
   //============================================================
 
 
-  app.use('/prueba', tipdoc());//ruta para el servicio
+  app.use('/operario', operario());
+  // kevin
+  // kevin
+
+  // davo
+  // davo
+  // davo
 
 
 http.createServer(app).listen(app.get('port'), function ( )
