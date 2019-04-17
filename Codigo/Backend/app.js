@@ -4,7 +4,7 @@ var http = require('http');//protocolo de intercambio de archivos
 var path = require('path');//direccion
 
 var operario = require('./src/rutas/operarioruta');
-// kevin
+var ruta = require('./src/rutas/rutarutas');
 // kevin
 
 // davo
@@ -44,8 +44,8 @@ app.use(function (req, res, next)
   //============================================================
 
 
-  app.use('/operario', operario());
-  // kevin
+  app.use('/operarios', operario());
+  app.use('/rutas', ruta());
   // kevin
 
   // davo
