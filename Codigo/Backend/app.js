@@ -5,7 +5,7 @@ var path = require('path');//direccion
 
 var operario = require('./src/rutas/operarioruta');
 var ruta = require('./src/rutas/rutarutas');
-// kevin
+var vuelos = require('./src/rutas/vuelosrutas');
 
 // davo
 // davo
@@ -46,7 +46,7 @@ app.use(function (req, res, next)
 
   app.use('/operarios', operario());
   app.use('/rutas', ruta());
-  // kevin
+  app.use('/vuelos', vuelos());
 
   // davo
   // davo

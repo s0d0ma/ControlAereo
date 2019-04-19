@@ -42,19 +42,21 @@ RutaModel.getOneRuta = function(id, callback){
 };
 
 RutaModel.insertRuta = function(rutaData, callback){
-    var sql =  "INSERT INTO rutas SET ?";
+    if(connection){
+        var sql =  "INSERT INTO rutas SET ?";
 
-    connection.query(sql, rutaData, function(error, result){
-        if(error){
-            throw error;
-        }else{
-            if(result.affectedRows>0){
-                callback(null,{"msg":"Registro Insertado"});
+        connection.query(sql, rutaData, function(error, result){
+            if(error){
+                throw error;
             }else{
-                callback(null,{"error":"error"});
+                if(result.affectedRows>0){
+                    callback(null,{"msg":"Registro Insertado"});
+                }else{
+                    callback(null,{"error":"error"});
+                }
             }
-        }
-    });
+        });
+    }
 };
 
 RutaModel.updateRuta = function(rutaData, callback){
@@ -65,20 +67,20 @@ RutaModel.updateRuta = function(rutaData, callback){
         +", ciudad_destino_rutas="+connection.escape(rutaData.ciudad_destino_rutas)
         +", estado_rutas="+connection.escape(rutaData.estado_rutas)
         +" WHERE id_rutas="+connection.escape(rutaData.id_rutas)+";";
-    }
-
-    connection.query(sql, function(error, result){
-        if(error){
-            throw error;
-        }else{
-            if(result.affectedRows > 0){
-                callback(null, {"msg": "Registro Actualizado"});
+        
+        connection.query(sql, function(error, result){
+            if(error){
+                throw error;
             }else{
-                callback(null, {"error": "error"});
+                if(result.affectedRows > 0){
+                    callback(null, {"msg": "Registro Actualizado"});
+                }else{
+                    callback(null, {"error": "error"});
+                }
+                
             }
-            
-        }
-    });
+        });
+    }
 };
 
 module.exports = RutaModel;
