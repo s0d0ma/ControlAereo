@@ -8,6 +8,9 @@ var ruta = require('./src/rutas/rutarutas');
 var vuelos = require('./src/rutas/vuelosrutas');
 
 // davo
+var aerolinea = require('./src/rutas/aerolinearuta');
+var avion = require('./src/rutas/avionruta');
+var ciudades = require('./src/rutas/ciudadruta');
 // davo
 // davo
 
@@ -47,11 +50,9 @@ app.use(function (req, res, next)
   app.use('/operarios', operario());
   app.use('/rutas', ruta());
   app.use('/vuelos', vuelos());
-
-  // davo
-  // davo
-  // davo
-
+  app.use('/aerolineas', aerolinea());
+  app.use('/aviones',avion());
+  app.use('/ciudades', ciudades());
 
 http.createServer(app).listen(app.get('port'), function ( )
 {
