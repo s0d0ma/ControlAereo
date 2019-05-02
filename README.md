@@ -1,4 +1,4 @@
-# !!!IMPORTANTE!!!! : NO OLVIDAR PETICIONES DE LOS INFORMES !!!!!!!
+# Falta Funcion del PLUS
 
 # ControlAereo
 Proyecto final de la materia de ingenieria de software 
