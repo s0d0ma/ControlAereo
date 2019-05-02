@@ -96,13 +96,27 @@ VuelosModel.updateRuta = function(vueloData, callback){
 
 VuelosModel.informe1 = function(dataInforme1, callback){
     if(connection){
-        var sql = "SELECT * FROM vuelos" 
-        +" WHERE fecha_reg_vuelos >= "
-        +connection.escape(dataInforme1.fecha_inicio)
-        +" AND fecha_reg_vuelos <= "
-        +connection.escape(dataInforme1.fecha_final)
-        +" AND operario_vuelos = "
-        +connection.escape(dataInforme1.id_operario)+";";
+        var sql = "SELECT vuelos.id_vuelos, vuelos.estado_vuelos, vuelos.fecha_reg_vuelos, vuelos.avion_vuelos,"
+        +" aviones.placa_aviones, aerolineas.nombre_aerolineas,"
+        +" vuelos.operario_vuelos, operarios.cedula_operarios, operarios.correo_operarios,"
+        +" operarios.nombre_operarios, vuelos.rutas_vuelos,"
+        +" ciudades_origen.nombre_cuidades as ciudad_origen, ciudades_destino.nombre_cuidades as ciudad_destino," 
+        +" vuelos.hora_llegada_vuelos, vuelos.hora_salida_vuelos"
+
+        +" FROM vuelos, rutas, operarios, aviones, aerolineas, ciudades as ciudades_origen, ciudades as ciudades_destino"
+
+        +" WHERE fecha_reg_vuelos >= "+connection.escape(dataInforme1.fecha_inicio)
+        +" AND fecha_reg_vuelos <= "+connection.escape(dataInforme1.fecha_final)
+        +" AND operario_vuelos = "+connection.escape(dataInforme1.id_operario)
+
+        +" AND vuelos.avion_vuelos = aviones.id_aviones"
+        +" AND aviones.id_aerolineas_aviones = aerolineas.id_aerolineas"
+
+        +" AND vuelos.operario_vuelos = operarios.id_operarios"
+
+        +" AND vuelos.rutas_vuelos = rutas.id_rutas"
+        +" AND rutas.ciudad_origen_rutas = ciudades_origen.id_ciudades"
+        +" AND rutas.ciudad_destino_rutas = ciudades_destino.id_ciudades;"
 
         connection.query(sql, function(error, rows){
             if(error){
@@ -114,17 +128,31 @@ VuelosModel.informe1 = function(dataInforme1, callback){
     }
 };
 
-VuelosModel.informe2 = function(dataIndorme2, callback){
+VuelosModel.informe2 = function(dataInforme2, callback){
     if(connection){
 
         // duda acerca de que informacion mostrar en el informe
-        var sql = "SELECT * FROM vuelos"
-        +" , aviones, aerolineas"
-        +" WHERE vuelos.fecha_reg_vuelos >= " + connection.escape(dataInforme2.fecha_inicio)
-        +" AND fecha_reg_vuelos <= " + connection.escape(dataInforme2.fecha_final)
+        var sql = "SELECT vuelos.id_vuelos, vuelos.estado_vuelos, vuelos.fecha_reg_vuelos, vuelos.avion_vuelos,"
+        +" aviones.placa_aviones, aerolineas.nombre_aerolineas,"
+        +" vuelos.operario_vuelos, operarios.cedula_operarios, operarios.correo_operarios,"
+        +" operarios.nombre_operarios, vuelos.rutas_vuelos,"
+        +" ciudades_origen.nombre_cuidades as ciudad_origen, ciudades_destino.nombre_cuidades as ciudad_destino," 
+        +" vuelos.hora_llegada_vuelos, vuelos.hora_salida_vuelos"
+
+        +" FROM vuelos, rutas, operarios, aviones, aerolineas, ciudades as ciudades_origen, ciudades as ciudades_destino"
+
+        +" WHERE fecha_reg_vuelos >= "+connection.escape(dataInforme2.fecha_inicio)
+        +" AND fecha_reg_vuelos <= "+connection.escape(dataInforme2.fecha_final)
+        +" AND aerolineas.id_aerolineas = "+connection.escape(dataInforme2.id_aerolinea)
+
         +" AND vuelos.avion_vuelos = aviones.id_aviones"
-        +" AND aviones.id_aerolineas_aviones = " + connection.escape(dataInforme2.id_aerolinea)
-        +" AND aerolineas.id_aerolineas = aviones.id_aerolineas_aviones;";
+        +" AND aviones.id_aerolineas_aviones = aerolineas.id_aerolineas"
+
+        +" AND vuelos.operario_vuelos = operarios.id_operarios"
+
+        +" AND vuelos.rutas_vuelos = rutas.id_rutas"
+        +" AND rutas.ciudad_origen_rutas = ciudades_origen.id_ciudades"
+        +" AND rutas.ciudad_destino_rutas = ciudades_destino.id_ciudades;";
 
         connection.query(sql, function(error, rows){
             if(error){

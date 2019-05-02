@@ -61,9 +61,10 @@ AerolineaModel.getOneAerolinea = function(id, callback){
             +", nombre_aerolineas"
             +", estado_aerolineas"
             +", fecha_reg_aerolineas"
+            +" FROM aerolineas"
             +" WHERE id_aerolineas = "
             + connection.escape(id)
-            +" ORDER BY id_aerolineas;";
+            +";";
 
         connection.query(sql, function(error, row){
             if(error){

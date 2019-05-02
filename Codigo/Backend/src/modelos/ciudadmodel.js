@@ -118,9 +118,11 @@ CiudadModel.insertCiudad = function(CiudadData, callback){
 //      {"msg": "error"}
 CiudadModel.updateCiudad = function(CiudadData, callback){
     if(connection){
-        var sql = "UPDATE operarios SET nombre_cuidades=" + connection.escape(CiudadData.nombre_cuidades)
+        var sql = "UPDATE ciudades SET nombre_cuidades=" + connection.escape(CiudadData.nombre_cuidades)
         +", prefijo_cuidades=" + connection.escape(CiudadData.prefijo_cuidades)
         +" WHERE id_ciudades = " + connection.escape(CiudadData.id_ciudades) +";";
+
+        console.log(sql);
 
         connection.query(sql, function(error, result){
             if(error){

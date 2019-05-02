@@ -59,7 +59,7 @@ module.exports = function(){
 
         // objeto Aerolinea
         var AerolineaData = {
-            id_aerolineas: req.body.id_operarios,
+            id_aerolineas: req.body.id_aerolineas,
             nombre_aerolineas: req.body.nombre_aerolineas,
             estado_aerolineas: req.body.estado_aerolineas,
             fecha_reg_aerolineas: req.body.fecha_reg_aerolineas
