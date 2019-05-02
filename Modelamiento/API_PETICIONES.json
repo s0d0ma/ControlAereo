@@ -1,0 +1,745 @@
+{
+	"info": {
+		"_postman_id": "d36caa7c-8f73-4301-b1f7-9a35baa2b85d",
+		"name": "Control Aereo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "aerolineas",
+			"item": [
+				{
+					"name": "GET aerolineas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/aerolineas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aerolineas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET_ID 1002",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/aerolineas/1002",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aerolineas",
+								"1002"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST aerolineas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"nombre_aerolineas\": \"avianca\",\r\n            \"estado_aerolineas\": \"enable\",\r\n            \"fecha_reg_aerolineas\": \"2019-04-16T01:10:42.000Z\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/aerolineas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aerolineas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Aerolineas",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"id_aerolineas\":1000,\r\n        \"nombre_aerolineas\": \"avianca\",\r\n        \"estado_aerolineas\": \"enable\",\r\n        \"fecha_reg_aerolineas\": \"2019-04-16T01:10:42.000Z\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/aerolineas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aerolineas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "operarios",
+			"item": [
+				{
+					"name": "GET Operarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/operarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID 400",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/operarios/4000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operarios",
+								"4000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Operarios",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"cedula_operarios\": \"999999999\",\r\n            \"correo_operarios\": \"operario@mail.com\",\r\n            \"fecha_nac_operarios\": \"2019-04-16T06:10:42.000Z\",\r\n            \"fecha_reg_operarios\": \"2019-04-16T06:10:42.000Z\",\r\n            \"nombre_operarios\": \"Nani nombre\",\r\n            \"sexo_operarios\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/operarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operarios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Operarios",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\t\"id_operarios\":4005,\r\n            \"cedula_operarios\": \"999999999\",\r\n            \"correo_operarios\": \"operario@mail.com\",\r\n            \"fecha_nac_operarios\": \"2019-04-16T06:10:42.000Z\",\r\n            \"fecha_reg_operarios\": \"2019-04-16T06:10:42.000Z\",\r\n            \"nombre_operarios\": \"Cambiado nombre\",\r\n            \"sexo_operarios\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/operarios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"operarios"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "rutas",
+			"item": [
+				{
+					"name": "GET Rutas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/rutas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rutas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID 5000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/rutas/5000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rutas",
+								"5000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Rutas",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id_rutas\": 5000,\n        \"ciudad_origen_rutas\": 3000,\n        \"ciudad_destino_rutas\": 3001,\n        \"estado_rutas\": \"enable\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rutas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rutas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Rutas",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"ciudad_origen_rutas\": 3000,\n        \"ciudad_destino_rutas\": 3001,\n        \"estado_rutas\": \"enable\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/rutas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"rutas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "vuelos",
+			"item": [
+				{
+					"name": "GET Vuelos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID 6001",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos/6001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"6001"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Vuelos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"fecha_reg_vuelos\": \"2019-04-17T05:29:47.000Z\",\n        \"avion_vuelos\": 2000,\n        \"operario_vuelos\": 4000,\n        \"rutas_vuelos\": 5000,\n        \"estado_vuelos\": \"enable\",\n        \"hora_llegada_vuelos\": \"2019-04-17T05:29:47.000Z\",\n        \"hora_salida_vuelos\": \"2019-04-17T05:29:47.000Z\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Vuelos",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id_vuelos\": 6001,\n        \"fecha_reg_vuelos\": \"2019-04-17T05:29:47.000Z\",\n        \"avion_vuelos\": 2000,\n        \"operario_vuelos\": 4000,\n        \"rutas_vuelos\": 5000,\n        \"estado_vuelos\": \"disable\",\n        \"hora_llegada_vuelos\": \"2019-04-17T05:29:47.000Z\",\n        \"hora_salida_vuelos\": \"2019-04-17T05:29:47.000Z\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Informe1",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id_operario\": 4000,\n        \"fecha_inicio\": \"2019-04-15T05:29:21.000Z\",\n        \"fecha_final\": \"2019-04-18T05:29:21.000Z\"\n}"
+						},
+						"url": {
+							"raw": "127.0.0.1:3000/vuelos/informe1",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"informe1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Informe2",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id_aerolinea\": 1000,\n        \"fecha_inicio\": \"2019-04-15T05:29:21.000Z\",\n        \"fecha_final\": \"2019-04-18T05:29:21.000Z\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/vuelos/informe2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"vuelos",
+								"informe2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "aviones",
+			"item": [
+				{
+					"name": "GET Aviones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/aviones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aviones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID 2000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/aviones/2000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aviones",
+								"2000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Aviones",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"placa_aviones\": \"12301\",\n        \"modelo_aviones\": \"boing\",\n        \"capacidad_aviones\": 400,\n        \"id_aerolineas_aviones\": 1000,\n        \"estado_aviones\": \"enable\",\n        \"fecha_reg_aviones\": \"2019-04-17T05:29:20.000Z\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/aviones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aviones"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Aviones",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id_aviones\": 2000,\n        \"placa_aviones\": \"12301\",\n        \"modelo_aviones\": \"boing\",\n        \"capacidad_aviones\": 400,\n        \"id_aerolineas_aviones\": 1000,\n        \"estado_aviones\": \"disable\",\n        \"fecha_reg_aviones\": \"2019-04-17T05:29:20.000Z\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/aviones",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"aviones"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ciudades",
+			"item": [
+				{
+					"name": "PUT ciudades",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"id_ciudades\": 3000,\n        \"nombre_cuidades\": \"Bogota\",\n        \"prefijo_cuidades\": \"BG\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/ciudades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST ciudades",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"nombre_cuidades\": \"Pereira\",\n        \"prefijo_cuidades\": \"PE\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:3000/ciudades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET ID 3000",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/ciudades/3000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ciudades",
+								"3000"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Ciudades",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:3000/ciudades",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"ciudades"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
